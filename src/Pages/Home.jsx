@@ -5,6 +5,7 @@ import FeaturedHeader from "../Components/FeaturedHeader";
 import RestaurantGrid from "../Components/RestaurantGrid";
 import Stats from "../Components/Stats";
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 export default function FoodDeliveryHome() {
   return (
@@ -15,6 +16,7 @@ export default function FoodDeliveryHome() {
       <FeaturedHeader />
       <RestaurantGrid />
       <Stats />
+      <Footer/>
     </div>
   );
 }
