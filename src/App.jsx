@@ -1,12 +1,16 @@
 import './App.css'
 import './index.css'
 import React from "react";
+import FoodDeliveryHome from './Pages/Home';
 
 function App() {
 
   return (
     <>
-      <h1 className='text-3xl font-bold underline'>alkjdaskljdlk</h1>
+    <div>
+      <FoodDeliveryHome/>
+    </div>
+    
     </>
   )
 }
