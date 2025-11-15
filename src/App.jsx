@@ -1,18 +1,16 @@
-import './App.css'
-import './index.css'
-import React from "react";
-import FoodDeliveryHome from './Pages/home/Home';
+import './App.css';
+import './index.css';
+import React from 'react';
+import MainRoutes from './routes/MainRoutes';
 
 function App() {
-
   return (
     <>
-    <div>
-      <FoodDeliveryHome/>
-    </div>
-    
+      <div>
+      <MainRoutes/>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
