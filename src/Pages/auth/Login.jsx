@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { loginUser } from '../../services/authServices';
 
+import { useNavigate } from 'react-router';
+
 export default function LoginPage() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
-
-  
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -19,15 +20,14 @@ export default function LoginPage() {
     const { email, password } = formData;
 
     try {
-      const result = await loginUser({email, password});
+      const result = await loginUser({ email, password });
 
       if (result.error) {
         alert(result.error);
       } else {
         alert('Login successful!');
-        console.log(result);
-        // Optional: redirect to home/dashboard
-        window.location.href = '/home';
+        localStorage.setItem('token', result.token);
+        navigate('/home');
       }
     } catch (err) {
       console.log(err);
