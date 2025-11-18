@@ -1,15 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import SignupPage from "../Pages/auth/Signup";
 import FoodDeliveryHome from "../Pages/home/Home";
+import LoginPage from "../Pages/auth/Login";
 
 export default function MainRoutes() {
   return (
     <Router>
       <Routes>
         {/* Default landing */}
-        <Route path="/" element={<SignupPage />} />
+        <Route path="/" element={<LoginPage />} />
 
         {/* Other routes */}    
         <Route path="/signup" element={<SignupPage />} />
