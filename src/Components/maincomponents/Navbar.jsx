@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect} from "react";
 import { MapPin, ChevronRight, User } from "lucide-react";
 import { useNavigate } from "react-router";
-
+import { toast } from 'react-toastify';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -23,6 +23,7 @@ export default function Navbar() {
   const handleLogOut=()=>{
     localStorage.removeItem("token");
     navigate("/");
+    toast.success("Logout Successfully")
   }
 
   return (

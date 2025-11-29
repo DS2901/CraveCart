@@ -22,7 +22,7 @@ export const loginUser = async (userData) => {
     return response.data; // usually token + user info
   } catch (error) {
     if (error.response) {
-     return { error: err.response?.data?.error || "Login failed" };
+     return { error: error.response?.data?.error || "Login failed" };
     }
   }
 };

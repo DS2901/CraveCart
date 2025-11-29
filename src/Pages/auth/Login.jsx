@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { loginUser } from '../../services/authServices';
+import { toast } from 'react-toastify';
 
 import { useNavigate } from 'react-router';
 
@@ -14,7 +15,7 @@ export default function LoginPage() {
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = formData;
@@ -23,9 +24,9 @@ export default function LoginPage() {
       const result = await loginUser({ email, password });
 
       if (result.error) {
-        alert(result.error);
+        toast.error(result.error);
       } else {
-        alert('Login successful!');
+        toast.success('Login successful!');
         localStorage.setItem('token', result.token);
         navigate('/home');
       }
